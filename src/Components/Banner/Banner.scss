@@ -1,0 +1,10 @@
+.banner {
+    height: 270px;
+    background-image: url(../../browse-headersSneakers.jpg);
+    display: flex;
+    align-items: center;
+    padding: 15px 15px 15px 48px;
+    &__text {
+        font-size: 5.1rem;
+    }
+}

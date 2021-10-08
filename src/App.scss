@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+// Variables
+
+$primary-color: #0a6341;
+
+// utils
+a,
+a:active,
+a:hover,
+a:focus {
+  color: #000;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+// Customs
+.btns {
+  font-size: 1.6rem;
+  padding: 5px 15px;
+  border: 1px solid #000;
+  border-radius: 20px;
+  margin: 0 8px;
+  font-weight: 500;
+  transition: all 0.3s;
+  &:hover {
+    background-color: $primary-color;
+    color: #fff;
+    border-color: $primary-color;
+  }
+}

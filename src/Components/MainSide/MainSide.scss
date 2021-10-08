@@ -1,0 +1,66 @@
+@import "../../App.scss";
+
+.side {
+    &__list {
+        margin-bottom: 28px;
+    }
+    &__item {
+        font-size: 1.6rem;
+        font-weight: 600;
+        line-height: 2;
+        transition: all 0.2s linear;
+        &:hover,
+        &.active {
+            cursor: pointer;
+            color: $primary-color;
+            font-size: 1.8rem;
+            // transform: translateX(10px);
+            font-weight: 900;
+        }
+    }
+    &__title {
+        font-size: 1.6rem;
+        font-weight: 600;
+        margin: 28px 0 8px;
+    }
+    &__sizes {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    &__size-item {
+        // Positioning
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 8px 4px;
+        // Size
+        $size: 32px;
+        height: $size;
+        width: $size;
+        // Color
+        background-color: #f5f5f5;
+        // Font
+        font-weight: 600;
+        font-size: 1.3rem;
+        // Animation
+        transition: all 0.8s;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $primary-color;
+            color: #fff;
+        }
+    }
+    &__checkbox {
+        padding-left: 12px;
+    }
+    &__size-item:nth-child(4n + 1) {
+        margin-left: 0;
+    }
+
+    label {
+        font-size: 1.4rem;
+        margin-left: 8px;
+    }
+}
