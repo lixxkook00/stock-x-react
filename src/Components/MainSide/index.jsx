@@ -42,34 +42,36 @@ function MainSide(props) {
                 <div className="side__type">
                     <div className="side__checkbox">
                         <input type="checkbox" name="men" id="men" />
-                        <label for="men">Men</label>
+                        <label htmlFor="men">Men</label>
                     </div>
                     <div className="side__checkbox">
                         <input type="checkbox" name="women" id="women" />
-                        <label for="women">Women</label>
+                        <label htmlFor="women">Women</label>
                     </div>
                     <div className="side__checkbox">
                         <input type="checkbox" name="child" id="child" />
-                        <label for="child">Child</label>
+                        <label htmlFor="child">Child</label>
                     </div>
                     <div className="side__checkbox">
                         <input type="checkbox" name="preshool" id="preshool" />
-                        <label for="preshool">Preschool</label>
+                        <label htmlFor="preshool">Preschool</label>
                     </div>
                     <div className="side__checkbox">
                         <input type="checkbox" name="infant" id="infant" />
-                        <label for="infant">Infant</label>
+                        <label htmlFor="infant">Infant</label>
                     </div>
                     <div className="side__checkbox">
                         <input type="checkbox" name="toddler" id="toddler" />
-                        <label for="toddler">Toodler</label>
+                        <label htmlFor="toddler">Toodler</label>
                     </div>
                 </div>
                 {/* <!-- SIZES --> */}
                 <div className="side__title">SIZES</div>
                 <div className="side__sizes">
-                    {ResultSize.map((size) => (
-                        <span className="side__size-item">{size}</span>
+                    {ResultSize.map((size, index) => (
+                        <span key={index} className="side__size-item">
+                            {size}
+                        </span>
                     ))}
                 </div>
 
@@ -78,31 +80,31 @@ function MainSide(props) {
                 <div className="side__prices">
                     <div className="side__price">
                         <input type="checkbox" name="price1" id="price1" />
-                        <label for="price1">Under $100</label>
+                        <label htmlFor="price1">Under $100</label>
                     </div>
                     <div className="side__price">
                         <input type="checkbox" name="price2" id="price2" />
-                        <label for="price2">$100 - $200</label>
+                        <label htmlFor="price2">$100 - $200</label>
                     </div>
                     <div className="side__price">
                         <input type="checkbox" name="price3" id="price3" />
-                        <label for="price3">$200 - $300</label>
+                        <label htmlFor="price3">$200 - $300</label>
                     </div>
                     <div className="side__price">
                         <input type="checkbox" name="price4" id="price4" />
-                        <label for="price4">$300 - $400</label>
+                        <label htmlFor="price4">$300 - $400</label>
                     </div>
                     <div className="side__price">
                         <input type="checkbox" name="price5" id="price5" />
-                        <label for="price5">$400 - $500</label>
+                        <label htmlFor="price5">$400 - $500</label>
                     </div>
                     <div className="side__price">
                         <input type="checkbox" name="pric6" id="pric6" />
-                        <label for="pric6">$500 - $600</label>
+                        <label htmlFor="pric6">$500 - $600</label>
                     </div>
                     <div className="side__price">
                         <input type="checkbox" name="pric7" id="pric7" />
-                        <label for="pric7">$600+</label>
+                        <label htmlFor="pric7">$600+</label>
                     </div>
                 </div>
             </div>

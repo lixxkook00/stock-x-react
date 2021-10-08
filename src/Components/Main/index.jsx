@@ -5,13 +5,13 @@ import "./Main.scss";
 
 Main.propTypes = {};
 
-function Main(props) {
+function Main({ data }) {
     return (
         <div className="main">
             <div className="container">
                 <div className="row">
                     <MainSide />
-                    <MainContent />
+                    <MainContent data={data} />
                 </div>
             </div>
         </div>
