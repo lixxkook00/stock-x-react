@@ -10,18 +10,30 @@ for (var i = 1; i < 15; i = i + 0.5) {
 }
 const ResultSize = [...sizes, 15, 16, 17, 18];
 
-function MainSide(props) {
+// Type
+const type = ["sneaker", "streetwear", "collectibles", "watch"];
+
+function MainSide({ onFilter }) {
+    const handleOnClick = (keyFilter) => {
+        onFilter(keyFilter);
+    };
+
     return (
         <div className="col-xl-2">
             {/* <!-- SIDE --> */}
             <div className="side">
                 {/* <!-- CATEGORIES --> */}
                 <ul className="side__list">
-                    <li className="side__item active">SNEAKERS</li>
-                    <li className="side__item">STREETWEAR</li>
-                    <li className="side__item">COLLECTIBLES</li>
-                    <li className="side__item">HANDBAGS</li>
-                    <li className="side__item">WATCHES</li>
+                    {type.map((type) => {
+                        return (
+                            <li
+                                className="side__item"
+                                onClick={() => handleOnClick(`${type}`)}
+                            >
+                                {type}
+                            </li>
+                        );
+                    })}
                 </ul>
                 <ul className="side__list">
                     <li className="side__item">BELOW RETAIL</li>

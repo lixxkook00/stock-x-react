@@ -1,8 +1,27 @@
 @import "../../App.scss";
 
+@keyframes zoomIn {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 .product {
     border: 1px solid #ededed;
     margin-bottom: 16px;
+    transition: all 1s;
+    animation: zoomIn 1s ease-in-out;
+    &:hover {
+        transform: scale(1.04);
+        cursor: pointer;
+        border-color: $primary-color;
+    }
     &__img {
         padding: 1.6rem;
     }
@@ -11,8 +30,12 @@
         background-color: #fafafa;
     }
     &__name {
-        height: 56px;
+        height: 64px;
         font-size: 1.4rem;
+        margin-bottom: 8px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-wrap: break-word;
     }
     &__ranking,
     span {

@@ -3,14 +3,25 @@ import "./MainContent.scss";
 
 MainContent.propTypes = {};
 
+const formatPrice = (price) => {
+    if (price >= 10000) {
+        let front = Math.floor(price / 1000);
+        let back = price % 1000;
+        if (back == 0) {
+            back = "000";
+        }
+        return `${front},${back}`;
+    }
+    return price;
+};
+
 function MainContent({ data }) {
-    console.log(data);
     return (
         <div className="col-xl-10">
             <div className="row">
-                {data.map((item) => {
+                {data.map((item, index) => {
                     return (
-                        <div className="col-xl-3">
+                        <div key={index} className="col-xl-3">
                             <div className="product">
                                 <div className="product__img">
                                     <img
@@ -24,7 +35,7 @@ function MainContent({ data }) {
                                     </div>
                                     <span>Lowest Ask</span>
                                     <div className="product__price">
-                                        ${item.price}
+                                        ${formatPrice(item.price)}
                                     </div>
                                     <div className="price__ranking">
                                         #Of Sales {item.ranking}
