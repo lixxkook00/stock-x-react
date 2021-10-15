@@ -1,0 +1,10 @@
+-   Build UI -> OK
+-   Build date file -> OK
+-   Render data -> OK
+-   Fix bug format price over 1000 -> OK
+-   filter Bar -> OK
+-   filter by TYPE -> OK
+-   filter by SIZE-TYPE
+-   filter by SIZE
+-   filter by BRAND -> OK
+-   sort by Price on filter Bar -> OK

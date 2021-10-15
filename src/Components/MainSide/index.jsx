@@ -13,11 +13,14 @@ const ResultSize = [...sizes, 15, 16, 17, 18];
 // Type
 const type = ["sneaker", "streetwear", "collectibles", "watch"];
 
-function MainSide({ onFilter }) {
+function MainSide({ onFilter, brandList, handleFilterByBrand }) {
+    const handleBrandFilter = (key, title) => {
+        handleFilterByBrand(key, title);
+    };
+
     const handleOnClick = (keyFilter) => {
         onFilter(keyFilter);
     };
-
     return (
         <div className="col-xl-2">
             {/* <!-- SIDE --> */}
@@ -39,15 +42,20 @@ function MainSide({ onFilter }) {
                     <li className="side__item">BELOW RETAIL</li>
                 </ul>
 
+                {/* Brand */}
                 <ul className="side__List">
-                    <li className="side__item">ADIDAS</li>
-                    <li className="side__item">AIR JORDAN</li>
-                    <li className="side__item">NIKE</li>
-                    <li className="side__item">NEW BALANCE</li>
-                    <li className="side__item">REEBOK</li>
-                    <li className="side__item">OTHER BRANDS</li>
-                    <li className="side__item">LUXURY BRANDS</li>
-                    <li className="side__item">COLLECTIONS</li>
+                    {brandList.map((item) => {
+                        return (
+                            <li
+                                className="side__item"
+                                onClick={() =>
+                                    handleBrandFilter(item.key, item.title)
+                                }
+                            >
+                                {item.title}
+                            </li>
+                        );
+                    })}
                 </ul>
                 {/* <!-- TYPES--> */}
                 <div className="side__title">SIZE TYPES</div>

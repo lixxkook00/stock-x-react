@@ -1,0 +1,78 @@
+@import "../../App.scss";
+
+.filterbar {
+    margin: 8px 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #242424;
+    &_links {
+        display: flex;
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: rgb(138, 138, 138);
+    }
+    &_links-item {
+        padding-right: 12px;
+        text-transform: uppercase;
+        &:hover {
+            cursor: pointer;
+            color: $primary-color;
+        }
+    }
+    span {
+        padding-right: 12px;
+    }
+    .box-filter {
+        display: flex;
+        align-items: center;
+        position: relative;
+        border: 1px solid #ddd;
+        padding: 10px;
+        font-size: 1.4rem;
+        user-select: none;
+        &:hover {
+            cursor: pointer;
+        }
+        i {
+            margin: 0 4px;
+        }
+        &__title {
+            margin-right: 4px;
+            font-weight: 600;
+        }
+        &__active {
+            color: $primary-color;
+        }
+    }
+    .box-filter__option {
+        // postion
+        position: absolute;
+        top: 100%;
+        left: -1px;
+        // padding: 10px;
+        // border
+        // size
+        width: calc(100% + 2px);
+        // color
+        background-color: rgba(255, 255, 255, 0.9);
+        // other
+        z-index: 1;
+    }
+    .box-item {
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-bottom: none;
+        transition: all 0.5s;
+        &:hover {
+            cursor: pointer;
+            background-color: $primary-color;
+            color: white;
+            border-color: $primary-color;
+        }
+        &:last-child {
+            border-bottom: 1px solid #ddd;
+        }
+    }
+}

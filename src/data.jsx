@@ -413,7 +413,7 @@ const data = [
         price: 650,
         brand: "balenciaga",
         ranking: 0,
-        type: "luxury",
+        type: "sneaker",
         size: [10, 11],
         sizeType: ["men", "woman"],
     },
@@ -424,7 +424,7 @@ const data = [
         price: 715,
         brand: "balenciaga",
         ranking: 0,
-        type: "luxury",
+        type: "sneaker",
         size: [10, 11],
         sizeType: ["men", "woman"],
     },
@@ -435,7 +435,7 @@ const data = [
         price: 846,
         brand: "balenciaga",
         ranking: 0,
-        type: "luxury",
+        type: "sneaker",
         size: [10, 11],
         sizeType: ["men", "woman"],
     },
@@ -446,7 +446,7 @@ const data = [
         price: 225,
         brand: "gucci",
         ranking: 0,
-        type: "luxury",
+        type: "sneaker",
         size: [10, 11],
         sizeType: ["men", "woman"],
     },
@@ -457,7 +457,7 @@ const data = [
         price: 319,
         brand: "gucci",
         ranking: 0,
-        type: "luxury",
+        type: "sneaker",
         size: [10, 11],
         sizeType: ["men", "woman"],
     },
@@ -468,7 +468,7 @@ const data = [
         price: 1300,
         brand: "lv",
         ranking: 0,
-        type: "luxury",
+        type: "sneaker",
         size: [10, 11],
         sizeType: ["men", "woman"],
     },
@@ -479,7 +479,7 @@ const data = [
         price: 372,
         brand: "slp",
         ranking: 0,
-        type: "luxury",
+        type: "sneaker",
         size: [10, 11],
         sizeType: ["men", "woman"],
     },
@@ -607,3 +607,102 @@ const data = [
 ];
 
 export default data;
+
+// Brand
+export const brand = [
+    {
+        key: "nike",
+        title: "NIKE",
+        type: "sneaker",
+    },
+    {
+        key: "jordan",
+        title: "AIR JORDAN",
+        type: "sneaker",
+    },
+    {
+        key: "yeezy",
+        title: "YEEZY",
+        type: "sneaker",
+    },
+    {
+        key: "reebok",
+        title: "REEBOK",
+        type: "sneaker",
+    },
+    {
+        key: "newbalance",
+        title: "NEW BALANCE",
+        type: "sneaker",
+    },
+    {
+        key: "balenciaga",
+        title: "BALENCIAGA",
+        type: "sneaker",
+    },
+    {
+        key: "gucci",
+        title: "GUCCI",
+        type: "sneaker",
+    },
+    {
+        key: "lv",
+        title: "LOUIS VUITTON",
+        type: "sneaker",
+    },
+    {
+        key: "other",
+        title: "OTHER",
+        type: "sneaker",
+    },
+    {
+        key: "fog",
+        title: "FEAR OF GOD",
+        type: "streetwear",
+    },
+    {
+        key: "vlone",
+        title: "VLONE",
+        type: "streetwear",
+    },
+    {
+        key: "yeezy",
+        title: "YEEZY",
+        type: "streetwear",
+    },
+    {
+        key: "hotwheel",
+        title: "HOT WHEEL",
+        type: "collectibles",
+    },
+    {
+        key: "ps",
+        title: "PLAY STATION",
+        type: "collectibles",
+    },
+    {
+        key: "nintendo",
+        title: "NINTENDO",
+        type: "collectibles",
+    },
+    {
+        key: "toys",
+        title: "OTHER",
+        type: "collectibles",
+    },
+    {
+        key: "rolex",
+        title: "ROLEX",
+        type: "watch",
+    },
+    {
+        key: "ap",
+        title: "Audemars Piguet",
+        type: "watch",
+    },
+    {
+        key: "patek",
+        title: "Patek Philippe",
+        type: "watch",
+    },
+];
