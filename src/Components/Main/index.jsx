@@ -2,9 +2,28 @@ import React, { useState, useEffect } from "react";
 import MainContent from "../MainContent";
 import MainSide from "../MainSide";
 import "./Main.scss";
-import data, { brand } from "../../data";
+import data, { brand, sizes, prices } from "../../data";
 
 Main.propTypes = {};
+
+// Util Function
+const filterCustom = (min, max, array) => {
+    return array.filter((item) => item.price >= min && item.price <= max);
+};
+
+let checkerSome = (arr, target) => target.some((v) => arr.includes(v));
+let checkerEvery = (arr, target) => target.every((v) => arr.includes(v));
+
+// If includes ? ADD : Remove
+const handleChecked = (item, array) => {
+    let temp = [...array];
+    if (array.includes(item)) {
+        temp = temp.filter((type) => type !== item);
+    } else {
+        temp = [...temp, item];
+    }
+    return temp;
+};
 
 function Main() {
     // useState Data List
@@ -12,7 +31,7 @@ function Main() {
         const newDataList = [...data].filter((item) => item.type === "sneaker");
         return newDataList;
     });
-    // useState Primary Link
+    // FILTER BAR
     const [primaryLink, setPrimaryLink] = useState("sneaker");
     const [secondLink, setSecondLink] = useState("");
 
@@ -23,6 +42,18 @@ function Main() {
     });
 
     const [titleFiltered, setTitleFiltered] = useState("Featured");
+
+    // SIDE BAR for FILTER
+    const [sizeList, setSizeList] = useState([]);
+    const [sizeTypeList, setSizeTypeList] = useState([]);
+
+    // index of Prices
+    const [priceList, setPriceList] = useState([]);
+
+    // title of Prices for filterTags
+    const [priceListTags, setPriceListTags] = useState([]);
+
+    const [filterTags, setFilterTag] = useState([]);
 
     // Filter by Type Item
     const handleFilter = (keyFilter) => {
@@ -66,8 +97,74 @@ function Main() {
         setTitleFiltered("Featured");
     };
 
-    const handleBackByPrimaryLink = (key) => {};
+    // Filter by Size Type
+    const handleFilterBySizeType = (size) => {
+        let temp = handleChecked(size, sizeTypeList);
+        setSizeTypeList([...temp]);
+    };
 
+    //Filter by Size
+    const handleFilterBySize = (size) => {
+        let temp = handleChecked(size, sizeList);
+        setSizeList([...temp]);
+    };
+
+    // Filter by Price
+    const handleFilterByPrice = (index) => {
+        let temp = handleChecked(index, priceList);
+        setPriceList(temp);
+    };
+
+    // Handle filter tags
+    useEffect(() => {
+        setFilterTag([...sizeList, ...sizeTypeList, ...priceListTags]);
+    }, [sizeList, sizeTypeList, priceListTags]);
+
+    // Filter by sizes
+    useEffect(() => {
+        if (sizeList.length > 0) {
+            const tempList = [...data].filter(
+                (item) =>
+                    checkerSome(item.size, sizeList) &&
+                    item.type === primaryLink
+            );
+            setDataList(tempList);
+        } else {
+            handleFilter(primaryLink);
+        }
+    }, [sizeList]);
+
+    // Filter by prices
+    useEffect(() => {
+        let tempCurrent = [];
+        let newDataList = [];
+        if (priceList.length > 0) {
+            priceList.forEach((item) => {
+                tempCurrent = filterCustom(prices[item].min, prices[item].max, [
+                    ...dataList,
+                ]);
+                newDataList = [...newDataList, ...tempCurrent];
+                console.log(newDataList, prices[item].min, prices[item].max);
+            });
+            setDataList(newDataList);
+        }
+    }, [priceList]);
+
+    // Filter by sizes type
+    useEffect(() => {
+        if (sizeTypeList.length > 0) {
+            const tempList = [...dataList].filter(
+                (item) =>
+                    checkerEvery(item.sizeType, sizeTypeList) &&
+                    item.type === primaryLink
+            );
+            setDataList(tempList);
+        } else {
+            handleFilter(primaryLink);
+        }
+    }, [sizeTypeList]);
+
+    // Set to default
     useEffect(() => {
         // Title box option Filter Bar
         setTitleFiltered("Featured");
@@ -75,11 +172,26 @@ function Main() {
         // Brand
         let tempBrand = [...brand].filter((item) => item.type === primaryLink);
         setBrandList(tempBrand);
+        // Filter Tags
+        setFilterTag([]);
+        setSizeList([]);
+        setSizeTypeList([]);
     }, [primaryLink]);
 
+    // Set total item display
     useEffect(() => {
         setTotalItem(dataList.length);
     }, [dataList]);
+
+    // Update prices tags
+    useEffect(() => {
+        const temp = [];
+        priceList.forEach((index) => {
+            temp.push(prices[index].title);
+        });
+        setPriceListTags(temp);
+    }, [priceList]);
+
     return (
         <div className="main">
             <div className="container">
@@ -87,9 +199,19 @@ function Main() {
                     <MainSide
                         onFilter={handleFilter}
                         brandList={brandList}
+                        primaryLink={primaryLink}
+                        secondLink={secondLink}
                         handleFilterByBrand={handleFilterByBrand}
+                        sizes={sizes}
+                        sizeTypeList={sizeTypeList}
+                        handleFilterBySizeType={handleFilterBySizeType}
+                        sizeList={sizeList}
+                        handleFilterBySize={handleFilterBySize}
+                        priceList={priceList}
+                        handleFilterByPrice={handleFilterByPrice}
                     />
                     <MainContent
+                        filterTags={filterTags}
                         key={data.length}
                         data={dataList}
                         primaryLink={primaryLink}

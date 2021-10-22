@@ -1,5 +1,7 @@
 import React from "react";
 import "./MainSide.scss";
+//Price
+import { prices } from "../../data";
 
 MainSide.propTypes = {};
 
@@ -13,14 +15,39 @@ const ResultSize = [...sizes, 15, 16, 17, 18];
 // Type
 const type = ["sneaker", "streetwear", "collectibles", "watch"];
 
-function MainSide({ onFilter, brandList, handleFilterByBrand }) {
+function MainSide({
+    onFilter,
+    brandList,
+    handleFilterByBrand,
+    primaryLink,
+    secondLink,
+    sizes,
+    handleFilterBySizeType,
+    handleFilterBySize,
+    handleFilterByPrice,
+    sizeTypeList,
+    sizeList,
+    priceList,
+}) {
     const handleBrandFilter = (key, title) => {
         handleFilterByBrand(key, title);
     };
-
     const handleOnClick = (keyFilter) => {
         onFilter(keyFilter);
     };
+
+    const handleOnClickSize = (size) => {
+        handleFilterBySize(size);
+    };
+
+    const handleSizeTypeOnChange = (size) => {
+        handleFilterBySizeType(size);
+    };
+
+    const handleOnClickPrice = (index) => {
+        handleFilterByPrice(index);
+    };
+
     return (
         <div className="col-xl-2">
             {/* <!-- SIDE --> */}
@@ -30,6 +57,12 @@ function MainSide({ onFilter, brandList, handleFilterByBrand }) {
                     {type.map((type) => {
                         return (
                             <li
+                                key={type}
+                                style={
+                                    type === primaryLink
+                                        ? { color: "#0a6341" }
+                                        : {}
+                                }
                                 className="side__item"
                                 onClick={() => handleOnClick(`${type}`)}
                             >
@@ -44,9 +77,15 @@ function MainSide({ onFilter, brandList, handleFilterByBrand }) {
 
                 {/* Brand */}
                 <ul className="side__List">
-                    {brandList.map((item) => {
+                    {brandList.map((item, index) => {
                         return (
                             <li
+                                key={index}
+                                style={
+                                    item.title === secondLink
+                                        ? { color: "#0a6341" }
+                                        : {}
+                                }
                                 className="side__item"
                                 onClick={() =>
                                     handleBrandFilter(item.key, item.title)
@@ -57,39 +96,45 @@ function MainSide({ onFilter, brandList, handleFilterByBrand }) {
                         );
                     })}
                 </ul>
-                {/* <!-- TYPES--> */}
+                {/* <!--SIZE TYPES--> */}
                 <div className="side__title">SIZE TYPES</div>
                 <div className="side__type">
-                    <div className="side__checkbox">
-                        <input type="checkbox" name="men" id="men" />
-                        <label htmlFor="men">Men</label>
-                    </div>
-                    <div className="side__checkbox">
-                        <input type="checkbox" name="women" id="women" />
-                        <label htmlFor="women">Women</label>
-                    </div>
-                    <div className="side__checkbox">
-                        <input type="checkbox" name="child" id="child" />
-                        <label htmlFor="child">Child</label>
-                    </div>
-                    <div className="side__checkbox">
-                        <input type="checkbox" name="preshool" id="preshool" />
-                        <label htmlFor="preshool">Preschool</label>
-                    </div>
-                    <div className="side__checkbox">
-                        <input type="checkbox" name="infant" id="infant" />
-                        <label htmlFor="infant">Infant</label>
-                    </div>
-                    <div className="side__checkbox">
-                        <input type="checkbox" name="toddler" id="toddler" />
-                        <label htmlFor="toddler">Toodler</label>
-                    </div>
+                    {sizes.map((size) => {
+                        return (
+                            <div className="side__checkbox" key={size}>
+                                <input
+                                    type="checkbox"
+                                    name={size}
+                                    id={size}
+                                    checked={sizeTypeList.includes(size)}
+                                    onChange={() =>
+                                        handleSizeTypeOnChange(size)
+                                    }
+                                />
+                                <label htmlFor={size}>{size}</label>
+                            </div>
+                        );
+                    })}
                 </div>
                 {/* <!-- SIZES --> */}
                 <div className="side__title">SIZES</div>
                 <div className="side__sizes">
                     {ResultSize.map((size, index) => (
-                        <span key={index} className="side__size-item">
+                        <span
+                            key={index}
+                            className="side__size-item"
+                            onClick={() => {
+                                handleOnClickSize(size);
+                            }}
+                            style={
+                                sizeList.includes(size)
+                                    ? {
+                                          backgroundColor: "#0a6341",
+                                          color: "#fff",
+                                      }
+                                    : {}
+                            }
+                        >
                             {size}
                         </span>
                     ))}
@@ -98,34 +143,20 @@ function MainSide({ onFilter, brandList, handleFilterByBrand }) {
                 {/* <!-- PIRCE --> */}
                 <div className="side__title">PRICE</div>
                 <div className="side__prices">
-                    <div className="side__price">
-                        <input type="checkbox" name="price1" id="price1" />
-                        <label htmlFor="price1">Under $100</label>
-                    </div>
-                    <div className="side__price">
-                        <input type="checkbox" name="price2" id="price2" />
-                        <label htmlFor="price2">$100 - $200</label>
-                    </div>
-                    <div className="side__price">
-                        <input type="checkbox" name="price3" id="price3" />
-                        <label htmlFor="price3">$200 - $300</label>
-                    </div>
-                    <div className="side__price">
-                        <input type="checkbox" name="price4" id="price4" />
-                        <label htmlFor="price4">$300 - $400</label>
-                    </div>
-                    <div className="side__price">
-                        <input type="checkbox" name="price5" id="price5" />
-                        <label htmlFor="price5">$400 - $500</label>
-                    </div>
-                    <div className="side__price">
-                        <input type="checkbox" name="pric6" id="pric6" />
-                        <label htmlFor="pric6">$500 - $600</label>
-                    </div>
-                    <div className="side__price">
-                        <input type="checkbox" name="pric7" id="pric7" />
-                        <label htmlFor="pric7">$600+</label>
-                    </div>
+                    {prices.map((price, index) => (
+                        <div className="side__price" key={price.code}>
+                            <input
+                                onChange={() => {
+                                    handleOnClickPrice(index);
+                                }}
+                                checked={priceList.includes(index)}
+                                type="checkbox"
+                                name={price.name}
+                                id={price.name}
+                            />
+                            <label htmlFor={price.name}>{price.title}</label>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./FilterBar.scss";
 let stateBoxOption = false;
 
@@ -62,19 +62,20 @@ function FilterBar({
                 >
                     {primaryLink}
                 </div>
-                <div className="filterbar_links-item">
-                    {secondLink != "" && <span>/</span>}
+                <div className="filterbar_links-item ml-minus-6px">
+                    {secondLink !== "" && <span>/</span>}
                     {secondLink} ({totalItem})
                 </div>
             </div>
             <div className="box-filter" onClick={handleToggleOption}>
                 <div className="box-filter__title">Sort By :</div>
                 <div className="box-filter__active">{titleFiltered}</div>
-                <i class="fas fa-angle-down"></i>
+                <i className="fas fa-angle-down"></i>
                 <div className="box-filter__option close">
-                    {optionList.map((item) => {
+                    {optionList.map((item, index) => {
                         return (
                             <div
+                                key={index}
                                 className="box-item"
                                 onClick={() =>
                                     handleFilterKey(item.key, item.title)

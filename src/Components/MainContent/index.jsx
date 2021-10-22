@@ -1,5 +1,6 @@
 import React from "react";
 import FilterBar from "../FilterBar";
+import FilterTags from "../FilterTags";
 import "./MainContent.scss";
 
 MainContent.propTypes = {};
@@ -8,7 +9,7 @@ const formatPrice = (price) => {
     if (price >= 1000) {
         let front = Math.floor(price / 1000);
         let back = price % 1000;
-        if (back == 0) {
+        if (back === 0) {
             back = "000";
         }
         if (back > 10 && back < 100) {
@@ -27,6 +28,7 @@ function MainContent({
     secondLink,
     handleFilter,
     totalItem,
+    filterTags,
 }) {
     return (
         <div className="col-xl-10">
@@ -38,6 +40,7 @@ function MainContent({
                 handleFilter={handleFilter}
                 totalItem={totalItem}
             />
+            <FilterTags filterTags={filterTags} />
             <div className="row">
                 {data.map((item, index) => {
                     return (

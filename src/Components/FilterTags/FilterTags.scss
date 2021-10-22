@@ -1,0 +1,27 @@
+@import "../../App.scss";
+.filter-tags {
+    padding: 16px 0 32px;
+    font-size: 1.6rem;
+    font-weight: 500;
+    &__item {
+        display: inline-block;
+        background-color: $primary-color;
+        color: #fff;
+        padding: 4px 8px;
+        margin: 0 12px 12px 0;
+        border-radius: 4px;
+        transition: all 0.5s;
+        &:hover {
+            opacity: 0.8;
+            cursor: pointer;
+            transform: scale(0.9);
+        }
+        &:hover .close-tags i {
+            transition: all 0.5s;
+            transform: rotate(180deg);
+        }
+    }
+    .close-tags {
+        padding: 0 4px;
+    }
+}

@@ -28,7 +28,10 @@ function Header(props) {
                     <div className="nav__item">Help</div>
                     <div className="nav__item">Login</div>
                     <div className="nav__item">Sign Up</div>
-                    <a href="" className="nav__button btns">
+                    <a
+                        href="https://lixxkook00.github.io/my-portfolio/"
+                        className="nav__button btns"
+                    >
                         Sell
                     </a>
                 </div>

@@ -8,7 +8,7 @@ const data = [
         ranking: 555,
         type: "sneaker",
         size: [8, 8.5, 9, 9.5, 10, 11],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 1,
@@ -19,7 +19,7 @@ const data = [
         ranking: 655,
         type: "sneaker",
         size: [10, 11, 12, 13, 15, 18],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 2,
@@ -30,7 +30,7 @@ const data = [
         ranking: 789,
         type: "sneaker",
         size: [2, 3, 4, 5, 9, 10, 11],
-        sizeType: ["men", "woman", "child"],
+        sizeType: ["Men", "Woman", "Child"],
     },
     {
         id: 3,
@@ -41,7 +41,7 @@ const data = [
         ranking: 745,
         type: "sneaker",
         size: [1, 2, 7, 10, 11],
-        sizeType: ["men", "woman", "preshool"],
+        sizeType: ["Men", "Woman", "Preshool"],
     },
     {
         id: 4,
@@ -52,7 +52,7 @@ const data = [
         ranking: 109,
         type: "sneaker",
         size: [3, 4, 5, 6, 7, 8, 8.5, 9, 10, 11],
-        sizeType: ["men", "woman", "preshool", "infant", "toddler"],
+        sizeType: ["Men", "Woman", "Preshool", "Infant", "Toddler"],
     },
     {
         id: 5,
@@ -63,7 +63,7 @@ const data = [
         ranking: 492,
         type: "sneaker",
         size: [10, 11],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 6,
@@ -74,7 +74,7 @@ const data = [
         ranking: 725,
         type: "sneaker",
         size: [10, 11],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 7,
@@ -85,7 +85,7 @@ const data = [
         ranking: 221,
         type: "sneaker",
         size: [8, 9, 9.5, 10, 11, 12],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 8,
@@ -96,7 +96,7 @@ const data = [
         ranking: 404,
         type: "sneaker",
         size: [10, 11],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 9,
@@ -107,18 +107,18 @@ const data = [
         ranking: 0,
         type: "sneaker",
         size: [10, 11],
-        sizeType: ["woman"],
+        sizeType: ["Woman"],
     },
     {
         id: 10,
-        name: "Jordan 1 Low Fragment x Travis Scott",
-        imgURL: "Air-Jordan-1-Low-fragment-design-x-Travis-Scott-Product.jpg",
+        name: "Jordan 1 Low FragMent x Travis Scott",
+        imgURL: "Air-Jordan-1-Low-fragMent-design-x-Travis-Scott-Product.jpg",
         price: 1031,
         brand: "jordan",
         ranking: 120,
         type: "sneaker",
         size: [10, 11, 12],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 11,
@@ -129,7 +129,7 @@ const data = [
         ranking: 676,
         type: "sneaker",
         size: [10, 11],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 12,
@@ -140,7 +140,7 @@ const data = [
         ranking: 371,
         type: "sneaker",
         size: [10, 11],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 13,
@@ -151,7 +151,7 @@ const data = [
         ranking: 333,
         type: "sneaker",
         size: [10, 11],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 14,
@@ -162,7 +162,7 @@ const data = [
         ranking: 453,
         type: "sneaker",
         size: [10, 11],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 15,
@@ -173,7 +173,7 @@ const data = [
         ranking: 489,
         type: "sneaker",
         size: [10, 11],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 16,
@@ -184,7 +184,7 @@ const data = [
         ranking: 476,
         type: "sneaker",
         size: [10, 11],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 17,
@@ -195,7 +195,7 @@ const data = [
         ranking: 0,
         type: "sneaker",
         size: [10, 11],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 18,
@@ -206,7 +206,7 @@ const data = [
         ranking: 456,
         type: "sneaker",
         size: [10, 11],
-        sizeType: ["woman"],
+        sizeType: ["Woman"],
     },
     {
         id: 19,
@@ -217,7 +217,7 @@ const data = [
         ranking: 147,
         type: "sneaker",
         size: [10, 11],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 20,
@@ -228,7 +228,7 @@ const data = [
         ranking: 478,
         type: "sneaker",
         size: [10, 11],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 21,
@@ -239,7 +239,7 @@ const data = [
         ranking: 469,
         type: "sneaker",
         size: [10, 11],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 22,
@@ -250,7 +250,7 @@ const data = [
         ranking: 156,
         type: "sneaker",
         size: [10, 11],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 23,
@@ -261,7 +261,7 @@ const data = [
         ranking: 698,
         type: "sneaker",
         size: [10, 11],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 24,
@@ -272,7 +272,7 @@ const data = [
         ranking: 478,
         type: "sneaker",
         size: [10, 11],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 25,
@@ -283,7 +283,7 @@ const data = [
         ranking: 0,
         type: "sneaker",
         size: [10, 11],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 26,
@@ -294,7 +294,7 @@ const data = [
         ranking: 791,
         type: "sneaker",
         size: [10, 11],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 27,
@@ -304,8 +304,8 @@ const data = [
         brand: "other",
         ranking: 0,
         type: "sneaker",
-        size: [10, 11],
-        sizeType: ["men", "woman"],
+        size: [10, 11, 18],
+        sizeType: ["Men", "Woman", "Preschool", "Infant", "Toodler", "Child"],
     },
     {
         id: 28,
@@ -316,7 +316,7 @@ const data = [
         ranking: 0,
         type: "sneaker",
         size: [10, 11],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman", "Preschool", "Infant", "Toodler", "Child"],
     },
     {
         id: 29,
@@ -327,7 +327,7 @@ const data = [
         ranking: 465,
         type: "streetwear",
         size: ["L", "XL"],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 30,
@@ -338,7 +338,7 @@ const data = [
         ranking: 0,
         type: "streetwear",
         size: ["S", "M", "L", "XL"],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 31,
@@ -349,7 +349,7 @@ const data = [
         ranking: 0,
         type: "streetwear",
         size: ["S", "M"],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 32,
@@ -360,7 +360,7 @@ const data = [
         ranking: 0,
         type: "streetwear",
         size: ["S", "M", "XXL"],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 33,
@@ -371,7 +371,7 @@ const data = [
         ranking: 0,
         type: "streetwear",
         size: ["S", "M"],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 34,
@@ -382,7 +382,7 @@ const data = [
         ranking: 0,
         type: "streetwear",
         size: ["S", "M"],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 35,
@@ -393,7 +393,7 @@ const data = [
         ranking: 0,
         type: "streetwear",
         size: ["S", "M"],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 36,
@@ -404,7 +404,7 @@ const data = [
         ranking: 0,
         type: "streetwear",
         size: ["S", "M"],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 37,
@@ -415,7 +415,7 @@ const data = [
         ranking: 0,
         type: "sneaker",
         size: [10, 11],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 38,
@@ -426,7 +426,7 @@ const data = [
         ranking: 0,
         type: "sneaker",
         size: [10, 11],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 39,
@@ -437,7 +437,7 @@ const data = [
         ranking: 0,
         type: "sneaker",
         size: [10, 11],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 40,
@@ -448,7 +448,7 @@ const data = [
         ranking: 0,
         type: "sneaker",
         size: [10, 11],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 41,
@@ -459,7 +459,7 @@ const data = [
         ranking: 0,
         type: "sneaker",
         size: [10, 11],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 42,
@@ -470,7 +470,7 @@ const data = [
         ranking: 0,
         type: "sneaker",
         size: [10, 11],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 43,
@@ -481,7 +481,7 @@ const data = [
         ranking: 0,
         type: "sneaker",
         size: [10, 11],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 44,
@@ -492,7 +492,7 @@ const data = [
         ranking: 0,
         type: "collectibles",
         size: ["S", "M"],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 45,
@@ -503,7 +503,7 @@ const data = [
         ranking: 0,
         type: "collectibles",
         size: ["S", "M"],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 46,
@@ -514,7 +514,7 @@ const data = [
         ranking: 0,
         type: "collectibles",
         size: ["S", "M"],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 47,
@@ -525,7 +525,7 @@ const data = [
         ranking: 0,
         type: "collectibles",
         size: ["S", "M"],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 48,
@@ -536,7 +536,7 @@ const data = [
         ranking: 0,
         type: "watch",
         size: ["S", "M"],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 49,
@@ -547,7 +547,7 @@ const data = [
         ranking: 0,
         type: "watch",
         size: ["S", "M"],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 50,
@@ -558,7 +558,7 @@ const data = [
         ranking: 0,
         type: "watch",
         size: ["S", "M"],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 51,
@@ -569,7 +569,7 @@ const data = [
         ranking: 0,
         type: "watch",
         size: ["S", "M"],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 52,
@@ -580,7 +580,7 @@ const data = [
         ranking: 0,
         type: "watch",
         size: ["S", "M"],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 53,
@@ -591,7 +591,7 @@ const data = [
         ranking: 0,
         type: "watch",
         size: ["S", "M"],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
     {
         id: 54,
@@ -602,7 +602,7 @@ const data = [
         ranking: 0,
         type: "watch",
         size: ["S", "M"],
-        sizeType: ["men", "woman"],
+        sizeType: ["Men", "Woman"],
     },
 ];
 
@@ -704,5 +704,65 @@ export const brand = [
         key: "patek",
         title: "Patek Philippe",
         type: "watch",
+    },
+];
+
+export const sizes = [
+    "Men",
+    "Woman",
+    "Child",
+    "Preschool",
+    "Infant",
+    "Toodler",
+];
+export const prices = [
+    {
+        code: 1,
+        name: "price1",
+        min: 0,
+        max: 99,
+        title: "Under $100",
+    },
+    {
+        code: 2,
+        name: "price2",
+        min: 100,
+        max: 200,
+        title: "$100 - $200",
+    },
+    {
+        code: 3,
+        name: "price3",
+        min: 201,
+        max: 300,
+        title: "$200 - $300",
+    },
+    {
+        code: 4,
+        name: "price4",
+        min: 301,
+        max: 400,
+        title: "$300 - $400",
+    },
+    {
+        code: 5,
+        name: "price5",
+        min: 401,
+        max: 500,
+        title: "$400 - $500",
+    },
+    {
+        code: 6,
+        name: "price6",
+        min: 501,
+        max: 600,
+        title: "$500 - $600",
+    },
+    {
+        code: 7,
+        name: "price7",
+        min: 601,
+        max: 1000000000,
+        title: "$600+",
     },
 ];
