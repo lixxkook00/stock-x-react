@@ -11,6 +11,11 @@ const filterCustom = (min, max, array) => {
     return array.filter((item) => item.price >= min && item.price <= max);
 };
 
+const getIndexByName = (name, array) => {
+    const isIndex = (element) => element.name === name;
+    return array.findIndex(isIndex);
+};
+
 let checkerSome = (arr, target) => target.some((v) => arr.includes(v));
 let checkerEvery = (arr, target) => target.every((v) => arr.includes(v));
 
@@ -65,7 +70,6 @@ function Main() {
 
     // Sort by price
     const handleSort = (key, title) => {
-        console.log(key);
         // Default sort low to high
         let defaultList = [];
         if (key === "low") {
@@ -110,15 +114,28 @@ function Main() {
     };
 
     // Filter by Price
-    const handleFilterByPrice = (index) => {
-        let temp = handleChecked(index, priceList);
+    const handleFilterByPrice = (name) => {
+        let temp = handleChecked(name, priceList);
         setPriceList(temp);
     };
 
+    // Remove filter tags
+    const handleRemoveFilterTag = (index) => {
+        const temp = filterTags.filter((tag) => tag !== index);
+        setFilterTag(temp);
+    };
+
     // Handle filter tags
+    // useEffect(() => {
+    //     setFilterTag([...sizeList, ...sizeTypeList, ...priceListTags]);
+    // }, [sizeList, sizeTypeList, priceListTags]);
+
+    //  Filter Tag Onchange
     useEffect(() => {
-        setFilterTag([...sizeList, ...sizeTypeList, ...priceListTags]);
-    }, [sizeList, sizeTypeList, priceListTags]);
+        console.log("filter Tags : ", filterTags);
+        console.log("Size Type : ", sizeTypeList);
+        console.log("Price : ", priceList);
+    }, [filterTags]);
 
     // Filter by sizes
     useEffect(() => {
@@ -132,6 +149,7 @@ function Main() {
         } else {
             handleFilter(primaryLink);
         }
+        // eslint-disable-next-line
     }, [sizeList]);
 
     // Filter by prices
@@ -140,14 +158,18 @@ function Main() {
         let newDataList = [];
         if (priceList.length > 0) {
             priceList.forEach((item) => {
-                tempCurrent = filterCustom(prices[item].min, prices[item].max, [
-                    ...dataList,
-                ]);
+                const index = getIndexByName(item, prices);
+                tempCurrent = filterCustom(
+                    prices[index].min,
+                    prices[index].max,
+                    [...dataList]
+                );
                 newDataList = [...newDataList, ...tempCurrent];
-                console.log(newDataList, prices[item].min, prices[item].max);
+                // console.log(newDataList, prices[item].min, prices[item].max);
             });
             setDataList(newDataList);
         }
+        // eslint-disable-next-line
     }, [priceList]);
 
     // Filter by sizes type
@@ -162,6 +184,7 @@ function Main() {
         } else {
             handleFilter(primaryLink);
         }
+        // eslint-disable-next-line
     }, [sizeTypeList]);
 
     // Set to default
@@ -186,10 +209,28 @@ function Main() {
     // Update prices tags
     useEffect(() => {
         const temp = [];
-        priceList.forEach((index) => {
+        priceList.forEach((item) => {
+            const index = getIndexByName(item, prices);
             temp.push(prices[index].title);
         });
+        console.log(temp);
         setPriceListTags(temp);
+    }, [priceList]);
+
+    // Update Filter tags by price
+    useEffect(() => {
+        if (filterTags.length > 0) {
+            const tempFiltertags = filterTags.filter(
+                (item) => item.type !== "price"
+            );
+            priceList.forEach((item) => {
+                tempFiltertags.push({ title: item, type: "price" });
+            });
+            console.log(tempFiltertags);
+            setFilterTag(tempFiltertags);
+        } else {
+            setFilterTag([{ title: priceList[0], type: "price" }]);
+        }
     }, [priceList]);
 
     return (
@@ -220,6 +261,7 @@ function Main() {
                         titleFiltered={titleFiltered}
                         handleFilter={handleFilter}
                         totalItem={totalItem}
+                        handleRemoveFilterTag={handleRemoveFilterTag}
                     />
                 </div>
             </div>

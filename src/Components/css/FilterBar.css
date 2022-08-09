@@ -1,0 +1,157 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+a,
+a:active,
+a:hover,
+a:focus {
+  color: #000;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+.ml-minus-6px {
+  margin-left: -6px;
+}
+
+.btns {
+  font-size: 1.6rem;
+  padding: 5px 15px;
+  border: 1px solid #000;
+  border-radius: 20px;
+  margin: 0 8px;
+  font-weight: 500;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btns:hover {
+  background-color: #0a6341;
+  color: #fff;
+  border-color: #0a6341;
+}
+
+.close {
+  display: none !important;
+}
+
+.filterbar {
+  margin: 8px 0 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.2rem;
+  color: #242424;
+}
+
+.filterbar_links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #8a8a8a;
+}
+
+.filterbar_links-item {
+  padding-right: 12px;
+  text-transform: uppercase;
+}
+
+.filterbar_links-item:hover {
+  cursor: pointer;
+  color: #0a6341;
+}
+
+.filterbar span {
+  padding-right: 12px;
+}
+
+.filterbar .box-filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  border: 1px solid #ddd;
+  padding: 10px;
+  font-size: 1.4rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.filterbar .box-filter:hover {
+  cursor: pointer;
+}
+
+.filterbar .box-filter i {
+  margin: 0 4px;
+}
+
+.filterbar .box-filter__title {
+  margin-right: 4px;
+  font-weight: 600;
+}
+
+.filterbar .box-filter__active {
+  color: #0a6341;
+}
+
+.filterbar .box-filter__option {
+  position: absolute;
+  top: 100%;
+  left: -1px;
+  width: calc(100% + 2px);
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 1;
+}
+
+.filterbar .box-item {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-bottom: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.filterbar .box-item:hover {
+  cursor: pointer;
+  background-color: #0a6341;
+  color: white;
+  border-color: #0a6341;
+}
+
+.filterbar .box-item:last-child {
+  border-bottom: 1px solid #ddd;
+}
+/*# sourceMappingURL=FilterBar.css.map */

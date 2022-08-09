@@ -44,8 +44,8 @@ function MainSide({
         handleFilterBySizeType(size);
     };
 
-    const handleOnClickPrice = (index) => {
-        handleFilterByPrice(index);
+    const handleOnClickPrice = (name) => {
+        handleFilterByPrice(name);
     };
 
     return (
@@ -144,12 +144,12 @@ function MainSide({
                 <div className="side__title">PRICE</div>
                 <div className="side__prices">
                     {prices.map((price, index) => (
-                        <div className="side__price" key={price.code}>
+                        <div className="side__price" key={index}>
                             <input
                                 onChange={() => {
-                                    handleOnClickPrice(index);
+                                    handleOnClickPrice(price.name);
                                 }}
-                                checked={priceList.includes(index)}
+                                checked={priceList.includes(price.name)}
                                 type="checkbox"
                                 name={price.name}
                                 id={price.name}

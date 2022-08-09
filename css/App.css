@@ -1,0 +1,57 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+a,
+a:active,
+a:hover,
+a:focus {
+  color: #000;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+.ml-minus-6px {
+  margin-left: -6px;
+}
+
+.btns {
+  font-size: 1.6rem;
+  padding: 5px 15px;
+  border: 1px solid #000;
+  border-radius: 20px;
+  margin: 0 8px;
+  font-weight: 500;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btns:hover {
+  background-color: #0a6341;
+  color: #fff;
+  border-color: #0a6341;
+}
+
+.close {
+  display: none !important;
+}
+/*# sourceMappingURL=App.css.map */

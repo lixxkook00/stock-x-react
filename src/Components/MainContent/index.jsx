@@ -29,6 +29,7 @@ function MainContent({
     handleFilter,
     totalItem,
     filterTags,
+    handleRemoveFilterTag,
 }) {
     return (
         <div className="col-xl-10">
@@ -40,7 +41,10 @@ function MainContent({
                 handleFilter={handleFilter}
                 totalItem={totalItem}
             />
-            <FilterTags filterTags={filterTags} />
+            <FilterTags
+                filterTags={filterTags}
+                handleRemoveFilterTag={handleRemoveFilterTag}
+            />
             <div className="row">
                 {data.map((item, index) => {
                     return (
