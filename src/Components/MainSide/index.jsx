@@ -50,7 +50,8 @@ function MainSide({
 
     return (
         <div className="col-xl-2">
-            {/* <!-- SIDE --> */}
+
+            {/* <!-- SIDE hehe --> */}
             <div className="side">
                 {/* <!-- CATEGORIES --> */}
                 <ul className="side__list">
